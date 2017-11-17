@@ -74,6 +74,22 @@ class Character extends Being {
         this._campaign = campaign;
     }
 }
+
+//example of web storage, which will be used to store character data
+function clickCounter () {
+    if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        }
+        else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " times.";
+    }
+    else {
+
+    }
+}
 let levelUp = 1;
 let attTemp = new Attributes('Mike', 'Human', 'M', 'Lawful Good', 4, 'Medium', 54, 199, 10, 10);
 let statsTemp = new Statistics(10, 10, 10, 10, 10, 10, 10, 10);
